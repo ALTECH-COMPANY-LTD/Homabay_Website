@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBCP Ltd - About Us</title>
+    {% load static %}
+    
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href= "{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% include "includes/header.html" %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About Us</h1>
+            <p>Learn more about Homa Bay Concrete Products Manufacturers Ltd and our commitment to quality and sustainability.</p>
+        </div>
+    </section>
+
+    <!-- Company Overview Section -->
+    <section class="about-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Company Overview</h2>
+            <p>Homa Bay Concrete Products Manufacturers Ltd (HBCP) has been at the forefront of concrete manufacturing in Kenya. Established with a mission to provide top-quality concrete products for sustainable infrastructure development, we have built a reputation for excellence and reliability in the construction industry.</p>
+            <p><strong>Mission:</strong> To provide top-quality concrete products for sustainable infrastructure development.</p>
+            <p><strong>Vision:</strong> To lead in innovation and customer satisfaction in Kenya's construction industry.</p>
+        </div>
+    </section>
+
+    <!-- Our Technology Section -->
+    <section class="technology-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Our Technology</h2>
+            <p>At HBCP, we utilize state-of-the-art technology in our manufacturing processes. Our production line features the advanced StoneMaker DM100 machines, which are designed to produce high-quality concrete products efficiently. Coupled with imported molds, our technology ensures precision and consistency in every product we offer.</p>
+            <p>We are committed to continuous improvement and innovation, ensuring that our products meet the highest industry standards and customer expectations.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include "includes/footer.html" %}
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/products.js' %}"></script>
+    
+    <script>
+        // Example of how to set the current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

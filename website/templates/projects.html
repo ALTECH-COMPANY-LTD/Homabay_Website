@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBCP Ltd - Projects</title>
+    {% load static %}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href= "{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    {% include "includes/header.html" %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Projects</h1>
+            <p>Explore how HBCP products are used in various applications to create sustainable infrastructure.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Showcasing Our Work</h2>
+            <div class="project-grid">
+                <!-- Project Item 1: Roads and Highways -->
+                <div class="project-item">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/Roads and Highway img/img1.jpeg' %}" alt="Roads and Highways">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/Roads and Highway img/img2.jpeg' %}" alt="Bridges">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/Roads and Highway img/img3.jpeg' %}" alt="Buildings">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/Roads and Highway img/img5.jpeg' %}" alt="Buildings">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/Roads and Highway img/img6.jpeg' %}" alt="Buildings">
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Roads and Highways</h3>
+                        <p>Our concrete products have been used in the construction of durable roads and highways that withstand heavy traffic and environmental conditions.</p>
+                        <blockquote>
+                            <p>"The durability of HBCP's concrete has significantly improved our infrastructure projects." - Client A</p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Project Item 2: Commercial Buildings -->
+                <div class="project-item">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/comecial Buildings/img1.jpeg' %}" alt="Commercial Building 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/comecial Buildings/img2.jpeg' %}"alt="Commercial Building 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/comecial Buildings/img6.jpeg' %}" alt="Commercial Building 3">
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Commercial Buildings</h3>
+                        <p>We provide high-quality concrete solutions for commercial buildings, ensuring structural integrity and aesthetic appeal.</p>
+                        <blockquote>
+                            <p>"HBCP's products were essential in meeting our timeline and quality standards." - Client B</p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Project Item 3: Residential Landscaping -->
+                <div class="project-item">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/residential landscping img/img1.jpeg' %}" alt="Residential Landscaping 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/residential landscping img/img2.jpeg' %}" alt="Residential Landscaping 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/residential landscping img/img3.jpeg' %}" alt="Residential Landscaping 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/residential landscping img/img4.jpeg' %}" alt="Residential Landscaping 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/residential landscping img/img5.jpeg' %}" alt="Residential Landscaping 3">
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Residential Landscaping</h3>
+                        <p>Our concrete solutions enhance residential landscapes, providing durability and beauty to outdoor spaces.</p>
+                        <blockquote>
+                            <p>"The landscaping project turned out beautifully thanks to HBCP's concrete products." - Client C</p>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- Project Item 4: Industrial Drainage Systems -->
+                <div class="project-item">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/industrial dranage system/img1.jpeg' %}" alt="Industrial Drainage System 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/industrial dranage system/img2.jpeg' %}" alt="Industrial Drainage System 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'images/industrial dranage system/img3.jpeg' %}" alt="Industrial Drainage System 3">
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Industrial Drainage Systems</h3>
+                        <p>We specialize in concrete solutions for industrial drainage systems, ensuring efficient water management and environmental protection.</p>
+                        <blockquote>
+                            <p>"HBCP's expertise in drainage systems has been invaluable to our projects." - Client D</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include "includes/footer.html" %}
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

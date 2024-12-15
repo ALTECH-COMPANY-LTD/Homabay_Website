@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Concrete Back Drops",
+        "description": "Precast concrete fence posts with a rectangular profile, made from a durable concrete mixture.",
+        "dimensions": "400mm x 200mm x 200mm",
+        "features": "Smooth, uniform finish suitable for various fencing applications. Stacked neatly, ready for delivery or installation.",
+        "category": "Concrete Products",
+        "image": "assets/products/concrete-backdrops.jpg"
+    },
+    {
+        "name": "Concrete Hollow Blocks",
+        "description": "Precast concrete blocks designed for structural integrity and durability in construction.",
+        "dimensions": "400mm x 200mm x 200mm",
+        "features": "Smooth finish ideal for various building applications. Stacked for easy handling and transport.",
+        "category": "Concrete Products",
+        "image": "assets/products/Concrete-hollow-block.jpg"
+    },
+    {
+        "name": "Invert-Block Drains",
+        "description": "Durable concrete drains designed for effective water management.",
+        "dimensions": "400mm x 200mm x 200mm",
+        "features": "Smooth finish, suitable for drainage solutions, ready for installation.",
+        "category": "Drainage Solutions",
+        "image": "assets/products/invert-block-drains.jpg"
+    },
+    {
+        "name": "Louvre Vent Blocks",
+        "description": "Concrete blocks with variable thickness designed for ventilation applications.",
+        "dimensions": "30mm x 30mm",
+        "features": "Constructed using dry stone molds for durability.",
+        "category": "Concrete Products",
+        "image": "assets/products/louvre-vent-blocks.jpg"
+    },
+    {
+        "name": "Paving Slabs",
+        "description": "Versatile paving slabs suitable for patios, walkways, and landscaping.",
+        "dimensions": "Variable thickness",
+        "features": "Available in various sizes and finishes for aesthetic appeal.",
+        "category": "Landscaping Products",
+        "image": "assets/products/paving-slabs.jpg"
+    },
+    {
+        "name": "Quadrants",
+        "description": "Concrete blocks with a curved edge, ideal for landscaping and garden design.",
+        "dimensions": "30mm x 20mm",
+        "features": "Dry stone molds ensure a consistent finish.",
+        "category": "Concrete Products",
+        "image": "assets/products/quadrants.jpg"
+    },
+    {
+        "name": "Road Channels",
+        "description": "Durable channels designed for effective drainage in landscaping and road applications.",
+        "dimensions": "30mm x 30mm",
+        "features": "Constructed to manage surface water and prevent erosion.",
+        "category": "Landscaping Products",
+        "image": "assets/products/road-channels.jpg"
+    },
+    {
+        "name": "Road Kerbs",
+        "description": "Robust kerbs that define boundaries for roads and pathways.",
+        "dimensions": "30mm x 30mm",
+        "features": "Available in various finishes to enhance visual appeal.",
+        "category": "Landscaping Products",
+        "image": "assets/products/road-kerbs.jpg"
+    },
+    {
+        "name": "Shallow Drains",
+        "description": "Shallow drainage solutions for effective water management.",
+        "dimensions": "30mm x 30mm",
+        "features": "Available in 10, 15, and 20cm widths.",
+        "category": "Drainage Solutions",
+        "image": "assets/products/shallow-drains.jpg"
+    },
+    {
+        "name": "Side Slabs",
+        "description": "Concrete slabs designed for edging and landscaping applications.",
+        "dimensions": "30mm x 30mm",
+        "features": "Available in 10, 15, and 20cm widths.",
+        "category": "Concrete Products",
+        "image": "assets/products/side-slabs.jpg"
+    },
+    {
+        "name": "Custom Pavers",
+        "description": "Decorative and functional paving options tailored to specific project needs.",
+        "dimensions": "Custom sizes available",
+        "features": "Versatile designs suitable for various landscaping applications.",
+        "category": "Landscaping Products",
+        "image": "assets/products/paving-slabs.jpg"
+    }
+]

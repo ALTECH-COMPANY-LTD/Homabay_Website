@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBCP Ltd - Our Services</title>
+    {% load static %}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href= "{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    {% include "includes/header.html" %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Services</h1>
+            <p>Committed to quality and innovation in all our concrete solutions.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" data-aos="fade-up">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Manufacturing</h3>
+                    <p>We utilize advanced technology and skilled labor to produce high-quality concrete products that meet industry standards.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Custom Orders</h3>
+                    <p>We offer custom molds and designs tailored to meet the specific needs of our clients, ensuring satisfaction and functionality.</p>
+                </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Delivery & Logistics</h3>
+                    <p>Our efficient logistics team ensures timely delivery of products across Kenya, maintaining the integrity of our materials.</p>
+                </div>
+                <!-- <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Consultation</h3>
+                    <p>We provide expert consultation to help clients choose the right products and services for their construction projects.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include "includes/footer.html" %}
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+</html>

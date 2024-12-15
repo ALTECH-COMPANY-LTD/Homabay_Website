@@ -1,0 +1,21 @@
+{% load static %}
+<header class="header">
+    <nav class="nav-container">
+        <div class="logo">
+            <img src="{% static 'images/favicon.png' %}" alt="HBCP Logo">
+            <a href="{% url 'index' %}" class="nav-top"><span class="logo-text">HOMABAY CONCRETE PRODUCTS MANUFACTURERS LIMITED</span></a>
+        </div>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li class="close-btn">&times;</li> <!-- Close button for mobile menu -->
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+</header>

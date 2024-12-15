@@ -1,0 +1,235 @@
+{
+  "hero": {
+    "title": "Building Durable Foundations for a Better Tomorrow",
+    "description": "Your trusted partner in manufacturing and supplying premium industrial-scale concrete products across Kenya and beyond.",
+    "ctaButtons": [
+      {
+        "text": "Explore Our Products",
+        "link": "products.html",
+        "class": "btn btn-primary"
+      },
+      {
+        "text": "Contact Us Today",
+        "link": "contact.html",
+        "class": "btn btn-secondary"
+      }
+    ]
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "description": "Learn more about Homa Bay Concrete Products Manufacturers Ltd and our commitment to quality and sustainability."
+    },
+    "overview": {
+      "title": "Company Overview",
+      "content": [
+        "Homa Bay Concrete Products Manufacturers Ltd (HBCP) has been at the forefront of concrete manufacturing in Kenya. Established with a mission to provide top-quality concrete products for sustainable infrastructure development, we have built a reputation for excellence and reliability in the construction industry.",
+        "Mission: To provide top-quality concrete products for sustainable infrastructure development.",
+        "Vision: To lead in innovation and customer satisfaction in Kenya's construction industry."
+      ]
+    },
+    "technology": {
+      "title": "Our Technology",
+      "content": [
+        "At HBCP, we utilize state-of-the-art technology in our manufacturing processes. Our production line features the advanced StoneMaker DM100 machines, which are designed to produce high-quality concrete products efficiently. Coupled with imported molds, our technology ensures precision and consistency in every product we offer.",
+        "We are committed to continuous improvement and innovation, ensuring that our products meet the highest industry standards and customer expectations."
+      ]
+    }
+  },
+  "products": {
+    "title": "Our Product Offerings",
+    "items": [
+      {
+        "title": "Concrete Blocks",
+        "image": "https://picsum.photos/300/200?random=1",
+        "description": "Hollow blocks for versatile construction.",
+        "dimensions": "400mm x 200mm x 200mm",
+        "features": "Durable, lightweight, and easy to handle."
+      },
+      {
+        "title": "Drainage Solutions",
+        "image": "https://picsum.photos/300/200?random=2",
+        "description": "Invert blocks, shallow drains, road kerbs, channels, etc.",
+        "dimensions": "Various sizes available",
+        "features": "Efficient water management, robust design."
+      },
+      {
+        "title": "Landscaping Products",
+        "image": "https://picsum.photos/300/200?random=3",
+        "description": "Paving slabs, side slabs, quadrants, and wall copings.",
+        "dimensions": "600mm x 600mm",
+        "features": "Aesthetic appeal, easy installation."
+      },
+      {
+        "title": "Manhole Components",
+        "image": "https://picsum.photos/300/200?random=4",
+        "description": "Rings, covers, cover slabs, and tapers.",
+        "dimensions": "900mm diameter",
+        "features": "Heavy-duty, designed for long-lasting use."
+      },
+      {
+        "title": "Custom Pavers",
+        "image": "https://picsum.photos/300/200?random=5",
+        "description": "Decorative and functional paving options.",
+        "dimensions": "Custom sizes available",
+        "features": "Versatile designs, suitable for various applications."
+      }
+    ]
+  },
+  "footer": {
+    "aboutUs": "HBCP Ltd is a leading manufacturer of premium concrete products, committed to quality and innovation in construction solutions.",
+    "contactInfo": {
+      "address": "123 Industrial Area, Homa Bay Town, Kenya",
+      "phone": "+254 700 000 000",
+      "email": "info@hbcp.co.ke",
+      "hours": "Mon - Fri: 8:00 AM - 5:00 PM"
+    },
+    "quickLinks": [
+      {
+        "text": "About Us",
+        "link": "pages/about.html"
+      },
+      {
+        "text": "Our Products",
+        "link": "pages/products.html"
+      },
+      {
+        "text": "Services",
+        "link": "pages/services.html"
+      },
+      {
+        "text": "Projects",
+        "link": "pages/projects.html"
+      },
+      {
+        "text": "Contact Us",
+        "link": "pages/contact.html"
+      }
+    ],
+    "newsletter": {
+      "description": "Subscribe to our newsletter for updates, news, and special offers."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "We'd love to hear from you! Please fill out the form below or reach out using our contact information."
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message"
+    },
+    "location": {
+      "address": "Homa Bay Town, Kenya",
+      "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0959322186265!2d34.920377715203264!3d-34.91834476504399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ5JzUwLjUiTiAzNMKwNTAnMTIuNyJF!5e0!3m2!1sen!2s!4v1635181893846!5m2!1sen!2s"
+    },
+    "contactInfo": {
+      "phone": "+254 728 996 670",
+      "email": "info@hbcpltd.co.ke",
+      "businessHours": "Monday - Saturday, 8:00 AM - 5:00 PM"
+    }
+  },
+  "index": {
+    "about": {
+      "title": "About HBCP",
+      "description": "HBCP is your trusted partner in manufacturing and supplying premium industrial-scale concrete products across Kenya and beyond. Based in Homa Bay Town, we use cutting-edge technology and imported molds to ensure quality and durability.",
+      "image": "https://picsum.photos/800/600?random=3",
+      "learnMoreLink": "about.html"
+    },
+    "products": {
+      "title": "Explore Our Products",
+      "description": "Discover our extensive range of high-quality concrete products designed for durability and performance.",
+      "items": [
+        {
+          "title": "Concrete Blocks",
+          "image": "https://picsum.photos/300/200?random=1",
+          "description": "Hollow blocks for versatile construction.",
+          "dimensions": "400mm x 200mm x 200mm",
+          "features": "Durable, lightweight, and easy to handle."
+        },
+        {
+          "title": "Drainage Solutions",
+          "image": "https://picsum.photos/300/200?random=2",
+          "description": "Invert blocks, shallow drains, road kerbs, channels, etc.",
+          "dimensions": "Various sizes available",
+          "features": "Efficient water management, robust design."
+        },
+        {
+          "title": "Landscaping Products",
+          "image": "https://picsum.photos/300/200?random=3",
+          "description": "Paving slabs, side slabs, quadrants, and wall copings.",
+          "dimensions": "600mm x 600mm",
+          "features": "Aesthetic appeal, easy installation."
+        },
+        {
+          "title": "Manhole Components",
+          "image": "https://picsum.photos/300/200?random=4",
+          "description": "Rings, covers, cover slabs, and tapers.",
+          "dimensions": "900mm diameter",
+          "features": "Heavy-duty, designed for long-lasting use."
+        },
+        {
+          "title": "Custom Pavers",
+          "image": "https://picsum.photos/300/200?random=5",
+          "description": "Decorative and functional paving options.",
+          "dimensions": "Custom sizes available",
+          "features": "Versatile designs, suitable for various applications."
+        }
+      ]
+    },
+    "footer": {
+      "aboutUs": "HBCP Ltd is a leading manufacturer of premium concrete products, committed to quality and innovation in construction solutions.",
+      "socialLinks": [
+        {
+          "icon": "fab fa-facebook-f",
+          "link": "#"
+        },
+        {
+          "icon": "fab fa-twitter",
+          "link": "#"
+        },
+        {
+          "icon": "fab fa-linkedin-in",
+          "link": "#"
+        },
+        {
+          "icon": "fab fa-instagram",
+          "link": "#"
+        }
+      ],
+      "quickLinks": [
+        {
+          "text": "About Us",
+          "link": "about.html"
+        },
+        {
+          "text": "Our Products",
+          "link": "products.html"
+        },
+        {
+          "text": "Services",
+          "link": "services.html"
+        },
+        {
+          "text": "Projects",
+          "link": "projects.html"
+        },
+        {
+          "text": "Contact Us",
+          "link": "contact.html"
+        }
+      ],
+      "contactInfo": {
+        "address": "123 Industrial Area, Homa Bay Town, Kenya",
+        "phone": "+254 728 996 670",
+        "email": "info@hbcp.co.ke",
+        "hours": "Mon - Fri: 8:00 AM - 5:00 PM"
+      },
+      "newsletter": {
+        "description": "Subscribe to our newsletter for updates, news, and special offers."
+      }
+    }
+  }
+}

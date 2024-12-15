@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBCP Ltd - Building Durable Foundations</title>
+    {% load static %}
+
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href= "{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    {% include "includes/header.html" %}
+    <!-- <div id="header-placeholder"></div> -->
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+        <div class="hero-content">
+            <h1 id="hero-title">Building Durable Foundations for a Better Tomorrow</h1>
+            <p id="hero-description">Your trusted partner in manufacturing and supplying premium industrial-scale concrete products across Kenya and beyond.</p>
+            <div class="cta-buttons">
+                <a href="{% url 'products' %}" class="btn btn-primary">Explore Our Products</a>
+                <a href="{% url 'contact' %}" class="btn btn-secondary">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" data-aos="fade-up">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="{% static 'images/home_about.png' %}" alt="HBCP Facility">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2>About HBCP</h2>
+                    <p>HBCP is your trusted partner in manufacturing and supplying premium industrial-scale concrete products across Kenya and beyond. Based in Homa Bay Town, we use cutting-edge technology and imported molds to ensure quality and durability.</p>
+                    <a href="{% url 'about' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "includes/footer.html" %}
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/products.js' %}"></script>
+    
+    <script>
+        // Example of how to set the current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
