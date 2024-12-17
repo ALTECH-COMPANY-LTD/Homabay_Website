@@ -421,12 +421,12 @@ body {
 }
 
 .footer-bottom a {
-    color: var(--secondary-color); /* Link color */
+    color: #ffffff; /* Light color for better contrast on blue */
     text-decoration: none;
 }
 
 .footer-bottom a:hover {
-    text-decoration: underline; /* Underline on hover */
+    color: #f0f0f0; /* Slightly lighter shade on hover */
 }
 
 .social-links {
