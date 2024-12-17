@@ -56,12 +56,12 @@
         .category-section {
             margin: 2rem 0;
             padding-bottom: 1rem;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .category-section h3 {
             font-size: 2rem;
-            color: #0056b3; /* Darker shade */
-            border-bottom: 2px solid #007BFF;
+            color: #333;
             padding-bottom: 0.5rem;
         }
 
@@ -70,48 +70,61 @@
             flex-wrap: wrap;
             justify-content: flex-start;
             gap: 1.5rem;
+            margin-top: 1rem;
         }
 
         .product-item {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 5px;
             padding: 1rem;
             text-align: center;
-            width: calc(33.333% - 1rem);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            width: calc(20% - 1.5rem);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .product-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .product-item img {
             max-width: 100%;
-            border-radius: 10px;
+            border-radius: 5px;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
         }
 
         .product-item h4 {
             margin: 0.5rem 0;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: #333;
         }
 
         .product-item p {
             margin: 0.25rem 0;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
         @media (max-width: 768px) {
             .product-item {
-                width: calc(50% - 1rem);
+                width: calc(33.333% - 1.5rem);
             }
         }
 
         @media (max-width: 480px) {
+            .product-item {
+                width: calc(50% - 1.5rem);
+            }
+        }
+
+        @media (max-width: 320px) {
             .product-item {
                 width: 100%;
             }

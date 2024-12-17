@@ -341,72 +341,92 @@ body {
 }
 /* Footer Styles */
 .footer {
-background: var(--primary-color);
-color: var(--text-light);
-padding: 4rem 0 0 0;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 4rem 0 0 0;
 }
 
 .footer-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 2rem;
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-column h3 {
-font-size: 1.2rem;
-margin-bottom: 1.5rem;
-font-weight: 600;
-position: relative;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
 }
 
 .footer-column h3::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: -8px;
-width: 40px;
-height: 2px;
-background: var(--secondary-color);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background: var(--secondary-color);
 }
 
 .footer-links {
-list-style: none;
+    list-style: none;
 }
 
 .footer-links li {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .footer-links a {
-color: var(--text-light);
-text-decoration: none;
-transition: var(--transition);
-opacity: 0.8;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8;
 }
 
 .footer-links a:hover {
-opacity: 1;
-padding-left: 8px;
-color: var(--secondary-color);
+    opacity: 1;
+    padding-left: 8px;
+    color: var(--secondary-color);
 }
 
 .footer-contact-info {
-list-style: none;
+    list-style: none;
 }
 
 .footer-contact-info li {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 1rem;
-opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
 }
 
 .footer-contact-info i {
-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+/* Powered by Section Styles */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+}
+
+.footer-bottom a {
+    color: var(--secondary-color); /* Link color */
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 .social-links {
