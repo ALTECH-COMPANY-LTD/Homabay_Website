@@ -381,18 +381,17 @@ body {
 }
 
 .footer-links a {
-    color: var(--text-light);
+    color: #ffffff; /* Light color for better contrast on blue */
     text-decoration: none;
     transition: var(--transition);
-    opacity: 0.8;
+    opacity: 0.8; /* Slightly transparent */
 }
 
 .footer-links a:hover {
-    opacity: 1;
-    padding-left: 8px;
-    color: var(--secondary-color);
+    opacity: 1; /* Fully opaque on hover */
+    padding-left: 8px; /* Adds a subtle shift effect */
+    color: #f0f0f0; /* Slightly lighter gray on hover */
 }
-
 .footer-contact-info {
     list-style: none;
 }
