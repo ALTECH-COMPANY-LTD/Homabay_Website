@@ -420,13 +420,17 @@ body {
     margin: 0.5rem 0;
 }
 
-.footer-bottom a {
+.footer-links a {
     color: #ffffff; /* Light color for better contrast on blue */
     text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8; /* Slightly transparent */
 }
 
-.footer-bottom a:hover {
-    color: #f0f0f0; /* Slightly lighter shade on hover */
+.footer-links a:hover {
+    opacity: 1; /* Fully opaque on hover */
+    padding-left: 8px; /* Adds a subtle shift effect */
+    color: #f0f0f0; /* Slightly lighter gray on hover */
 }
 
 .social-links {
