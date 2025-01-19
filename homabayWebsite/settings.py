@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'homabayWebsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # Use MySQL backend
+        'NAME': os.environ['DB_NAME'],         # Database name from environment variable
+        'USER': os.environ['DB_USER'],         # MySQL username from environment variable
+        'PASSWORD': os.environ['DB_PASSWORD'],  # MySQL password from environment variable
+        'HOST': os.environ.get('DB_HOST', 'localhost'),  # Default to 'localhost'
+        'PORT': os.environ.get('DB_PORT', '3306'),      # Default MySQL port
     }
 }
 
