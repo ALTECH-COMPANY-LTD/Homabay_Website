@@ -2,7 +2,9 @@
 <header class="header">
     <nav class="nav-container">
         <div class="logo">
-            <img src="{% static 'images/favicon.png' %}" alt="HBCP Logo">
+            <a href="{% url 'index' %}" class="nav-top">
+                <img src="{% static 'images/favicon.png' %}" alt="HBCP Logo">
+            </a>
             <a href="{% url 'index' %}" class="nav-top"><span class="logo-text">HOMABAY CONCRETE PRODUCTS MANUFACTURERS LIMITED</span></a>
         </div>
         <div class="mobile-menu">

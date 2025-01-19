@@ -37,6 +37,13 @@ body {
 .header.scrolled {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+.nav-top {
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-top:hover {
+    text-decoration: none; /* Optional: Add underline on hover */
+}
 
 .nav-container {
     max-width: 1400px;
@@ -381,17 +388,18 @@ body {
 }
 
 .footer-links a {
-    color: #ffffff; /* Light color for better contrast on blue */
+    color: var(--text-light);
     text-decoration: none;
     transition: var(--transition);
-    opacity: 0.8; /* Slightly transparent */
+    opacity: 0.8;
 }
 
 .footer-links a:hover {
-    opacity: 1; /* Fully opaque on hover */
-    padding-left: 8px; /* Adds a subtle shift effect */
-    color: #f0f0f0; /* Slightly lighter gray on hover */
+    opacity: 1;
+    padding-left: 8px;
+    color: var(--secondary-color);
 }
+
 .footer-contact-info {
     list-style: none;
 }
@@ -419,13 +427,17 @@ body {
     margin: 0.5rem 0;
 }
 
-.footer-bottom a {
-    color: var(--secondary-color); /* Link color */
+.footer-links a {
+    color: #ffffff; /* Light color for better contrast on blue */
     text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8; /* Slightly transparent */
 }
 
-.footer-bottom a:hover {
-    text-decoration: underline; /* Underline on hover */
+.footer-links a:hover {
+    opacity: 1; /* Fully opaque on hover */
+    padding-left: 8px; /* Adds a subtle shift effect */
+    color: #f0f0f0; /* Slightly lighter gray on hover */
 }
 
 .social-links {

@@ -37,6 +37,13 @@ body {
 .header.scrolled {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+.nav-top {
+    text-decoration: none; /* Remove underline */
+}
+
+.nav-top:hover {
+    text-decoration: none; /* Optional: Add underline on hover */
+}
 
 .nav-container {
     max-width: 1400px;
