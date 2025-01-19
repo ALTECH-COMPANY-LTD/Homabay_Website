@@ -3,7 +3,7 @@ import sys
 import django
 
 # Set up Django environment
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project_name.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'homabayWebsite.settings')
 django.setup()
 
 from django.contrib.auth import get_user_model
