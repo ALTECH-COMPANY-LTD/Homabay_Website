@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['homabayconcreteproducts.com','www.homabayconcreteproducts.com']
+ALLOWED_HOSTS = ['homabayconcreteproducts.com','www.homabayconcreteproducts.com', '127.0.1.1']
 
 
 # Application definition
