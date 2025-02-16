@@ -1,9 +1,19 @@
-from django.shortcuts import render
-from products.models import Product  
+from django.shortcuts import render, get_object_or_404
+from .models import Item, Category, Tag, ItemImage  # Ensure ItemImage is imported
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
+def gallery_list(request):
+    items = Item.objects.all()
+    categories = Category.objects.all()
+    return render(request, 'gallery_list.html', {'items': items, 'categories': categories})
+
+def gallery_detail(request, slug):
+    item = get_object_or_404(Item, slug=slug)
+    images = item.images.all()  # Retrieve all related images for the item
+    return render(request, 'gallery_detail.html', {'item': item, 'images': images})
 
 def about(request):
     return render(request, 'about.html')
@@ -11,8 +21,7 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-# website/views.py
-
+# In website/views.py
 from django.shortcuts import render
 from products.models import Product
 

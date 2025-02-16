@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gallery Detail</title>
+    <!-- Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <style>
+        :root {
+            --primary-bg: #e0e5ec;
+            --shadow-color: rgba(163, 177, 198, 0.6);
+            --highlight-color: rgba(255, 255, 255, 0.8);
+            --text-color: #2d3436;
+            --tag-bg: #74b9ff;
+            --accent-color: #0984e3;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-mode {
+            --primary-bg: #1a1f25;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --highlight-color: rgba(255, 255, 255, 0.05);
+            --text-color: #ecf0f1;
+            --tag-bg: #0984e3;
+            --accent-color: #74b9ff;
+            --glass-bg: rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background: var(--primary-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 80%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        
+        .gallery-item {
+            background: var(--glass-bg);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 
+                20px 20px 40px var(--shadow-color),
+                -20px -20px 40px var(--highlight-color);
+            margin-bottom: 3rem;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 
+                25px 25px 50px var(--shadow-color),
+                -25px -25px 50px var(--highlight-color);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 600px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--accent-color) !important;
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-content {
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--glass-bg), transparent);
+            opacity: 0.3;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--accent-color), var(--tag-bg));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .event-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .event-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 
+                5px 5px 10px var(--shadow-color),
+                -5px -5px 10px var(--highlight-color);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 
+                8px 8px 16px var(--shadow-color),
+                -8px -8px 16px var(--highlight-color);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-gallery a {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 
+                5px 5px 15px var(--shadow-color),
+                -5px -5px 15px var(--highlight-color);
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery a:hover {
+            transform: scale(1.05);
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-gallery a:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .gallery-content {
+                padding: 2rem;
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+
+            .swiper {
+                height: 400px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--tag-bg);
+        }
+    </style>
+</head>
+<body>
+    {% include "includes/header.html" %}
+    
+
+    <div class="container">
+        <div class="gallery-item" data-aos="fade-up">
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for image in item.images.all %}
+                        <div class="swiper-slide">
+                            <img src="{{ image.image.url }}" alt="Image of {{ item.title }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="gallery-content">
+                <h3>{{ item.title }}</h3>
+                <div class="event-date">
+                    <i class="far fa-calendar-alt"></i>
+                    {{ item.date }}
+                </div>
+                <p class="event-description">{{ item.description }}</p>
+                <div class="event-tag">
+                    {% if item.tags.all %}
+                        {% for tag in item.tags.all %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    {% else %}
+                        <span class="tag">No tags available</span>
+                    {% endif %}
+                </div>
+                <a href="{% url 'gallery_list' %}" class="btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to Gallery
+                </a>
+            </div>
+        </div>
+
+        <div class="image-gallery" data-aos="fade-up" data-aos-delay="200">
+            {% for image in item.images.all %}
+                <a href="{{ image.image.url }}" data-lightbox="gallery" data-title="{{ item.title }}">
+                    <img src="{{ image.image.url }}" alt="Image of {{ item.title }}">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: true
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper(".mySwiper", {
+            effect: "creative",
+            creativeEffect: {
+                prev: {
+                    shadow: true,
+                    translate: ["-20%", 0, -1],
+                },
+                next: {
+                    translate: ["100%", 0, 0],
+                },
+            },
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        // Lightbox Configuration
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2',
+            'fadeDuration': 300
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

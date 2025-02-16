@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Gallery</title>
+    {% load static %}
+    {% load custom_filters %}
+    
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <style>
+        [data-theme="dark"] {
+            --primary-color: #64b5f6;
+            --background: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --shadow-color: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 5px 5px 15px var(--shadow-color),
+                        -5px -5px 15px var(--shadow-color);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .header-space {
+            margin-bottom: 60px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 12px;
+            font-weight: 500;
+            box-shadow: 5px 5px 10px var(--shadow-color),
+                        -5px -5px 10px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 8px 8px 20px var(--shadow-color),
+                        -8px -8px 20px var(--shadow-color);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 12px 12px 25px var(--shadow-color),
+                        -12px -12px 25px var(--shadow-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .gallery-content {
+            padding: 25px;
+        }
+
+        .gallery-content h3 {
+            margin: 0 0 15px;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .event-date {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .event-description {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .event-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .no-items {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            grid-column: 1 / -1;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .filters {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    {% include "includes/header.html" %}
+    <div class="header-space"></div>
+
+    <div class="container">
+        <div class="filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all" onclick="filterGallery('all')">
+                <i class="fas fa-th-large"></i> All
+            </button>
+            {% for category in categories %}
+                <button class="filter-btn" data-filter="{{ category.name|lower }}" onclick="filterGallery('{{ category.name|lower }}')">
+                    <i class="fas fa-filter"></i> {{ category.name }}
+                </button>
+            {% endfor %}
+        </div>
+
+        <div class="gallery-grid" data-aos="fade-up">
+            {% for item in items %}
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="{{ forloop.counter|multiply:100 }}" data-category="{{ item.category.name|lower }}">
+                <a href="{% url 'gallery_detail' item.slug %}">
+                    {% if item.images.all %}
+                        <img src="{{ item.images.all.0.image.url }}" alt="{{ item.title }}" loading="lazy">  {# Display the first image #}
+                    {% else %}
+                        <img src="{% static 'default_image.png' %}" alt="Default image" loading="lazy">  {# Fallback image #}
+                    {% endif %}
+                    <div class="gallery-content">
+                        <h3>{{ item.title }}</h3>
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                            {{ item.date }}
+                        </div>
+                        <p class="event-description">{{ item.description }}</p>
+                        <span class="event-tag">
+                            {{ item.category.name }}
+                        </span>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <div class="no-items" data-aos="fade-up">
+                <i class="fas fa-folder-open fa-3x"></i>
+                <p>No items found in the gallery.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% include "includes/footer.html" %}
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/products.js' %}"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        function filterGallery(filter) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.gallery-item');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === filter) {
+                    btn.classList.add('active');
+                }
+            });
+
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+
+        filterGallery('all');
+    </script>
+</body>
+</html>
