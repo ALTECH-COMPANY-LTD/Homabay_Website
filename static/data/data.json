@@ -122,12 +122,12 @@
       "message": "Message"
     },
     "location": {
-      "address": "Homa Bay Town, Kenya",
+      "address": "Sofia Area, Homa Bay Town, Kenya",
       "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0959322186265!2d34.920377715203264!3d-34.91834476504399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ5JzUwLjUiTiAzNMKwNTAnMTIuNyJF!5e0!3m2!1sen!2s!4v1635181893846!5m2!1sen!2s"
     },
     "contactInfo": {
       "phone": "+254 728 996 670",
-      "email": "info@hbcpltd.co.ke",
+      "email": "info@homabayconcreteproducts.com",
       "businessHours": "Monday - Saturday, 8:00 AM - 5:00 PM"
     }
   },
@@ -222,9 +222,9 @@
         }
       ],
       "contactInfo": {
-        "address": "123 Industrial Area, Homa Bay Town, Kenya",
+        "address": "Sofia Area, Homa Bay Town, Kenya",
         "phone": "+254 728 996 670",
-        "email": "info@hbcp.co.ke",
+        "email": "info@homabayconcreteproducts.com",
         "hours": "Mon - Fri: 8:00 AM - 5:00 PM"
       },
       "newsletter": {
